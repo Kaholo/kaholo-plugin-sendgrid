@@ -1,0 +1,251 @@
+{
+    "name": "SendGrid",
+    "type": "executer",
+    "execProgram": "node",
+    "main": "app.js",
+    "exposeRoute": true,
+    "imgUrl": "logo.png",
+    "version": "1.0.0",
+    "description": "Integration with SendGrid API",
+    "settings": [
+        {
+            "name":"token",
+            "viewName":"API Token",
+            "type":"vault"
+        }
+    ],
+    "methods":[
+        {
+            "name":"sendEmail",
+            "viewName":"Send Email",
+            "params":[
+                {
+                    "name":"token",
+                    "viewName":"API Token",
+                    "type":"vault"
+                },
+                {
+                    "name":"to",
+                    "viewName": "To",
+                    "type":"text"
+                },
+                {
+                    "name":"cc",
+                    "viewName": "CC",
+                    "type":"text"
+                },
+                {
+                    "name":"bcc",
+                    "viewName": "BCC",
+                    "type":"text"
+                },
+                {
+                    "name":"from",
+                    "viewName": "From",
+                    "type":"string"
+                },
+                {
+                    "name":"replyTo",
+                    "viewName": "Reply To",
+                    "type":"string"
+                },
+                {
+                    "name":"subject",
+                    "viewName": "Subject",
+                    "type":"string"
+                },
+                {
+                    "name":"text",
+                    "viewName": "Text",
+                    "type":"text"
+                },
+                {
+                    "name":"html",
+                    "viewName": "HTML",
+                    "type":"text"
+                },
+                {
+                    "name":"template",
+                    "viewName": "Template",
+                    "type": "autocomplete",
+                    "autocompleteType":"function",
+                    "functionName":"listTemplates"
+                },
+                {
+                    "name":"dynamicTemplateData",
+                    "viewName": "Dynamic Template Data",
+                    "type":"text"
+                },
+                {
+                    "name":"attachmentPaths",
+                    "viewName": "Attachment Paths",
+                    "type":"text"
+                },
+                {
+                    "name":"categories",
+                    "viewName": "Categories",
+                    "type": "autocomplete",
+                    "autocompleteType":"function",
+                    "functionName":"listCategories"
+                },
+                {
+                    "name":"sendAt",
+                    "viewName": "Send At",
+                    "type": "autocomplete",
+                    "autocompleteType":"function",
+                    "functionName":"getSendAt"
+                },
+                {
+                    "name":"headers",
+                    "viewName": "Headers",
+                    "type":"text"
+                },
+                {
+                    "name":"customArgs",
+                    "viewName": "Custom Args",
+                    "type":"text"
+                }
+            ]
+        },
+        {
+            "name":"getEmailMessages",
+            "viewName":"Get Email Messages",
+            "params":[
+                {
+                    "name":"token",
+                    "viewName":"API Token",
+                    "type":"vault"
+                },
+                {
+                    "name":"to",
+                    "viewName": "To Emails",
+                    "type":"text"
+                },
+                {
+                    "name":"from",
+                    "viewName": "From Emails",
+                    "type":"text"
+                },
+                {
+                    "name":"subjects",
+                    "viewName": "Subjects",
+                    "type":"text"
+                },
+                {
+                    "name":"limit",
+                    "viewName": "Limit",
+                    "type":"string"
+                }
+            ]
+        },
+        {
+            "name":"getEmailStats",
+            "viewName":"Get Email Stats",
+            "params":[
+                {
+                    "name":"token",
+                    "viewName":"API Token",
+                    "type":"vault"
+                },
+                {
+                    "name":"startDate",
+                    "viewName": "Start Date",
+                    "type": "autocomplete",
+                    "autocompleteType":"function",
+                    "functionName":"getStartDate"
+                },
+                {
+                    "name":"endDate",
+                    "viewName": "End Date",
+                    "type": "autocomplete",
+                    "autocompleteType":"function",
+                    "functionName":"getEndDate"
+                },
+                {
+                    "name":"limit",
+                    "viewName": "Limit",
+                    "type":"string"
+                },
+                {
+                    "name":"offset",
+                    "viewName": "Offset",
+                    "type":"string"
+                }
+            ]
+        },
+        {
+            "name":"getEventWebhooks",
+            "viewName":"Get Event Webhook Settings",
+            "params":[
+                {
+                    "name":"token",
+                    "viewName":"API Token",
+                    "type":"vault"
+                }
+            ]
+        },
+        {
+            "name":"getCategories",
+            "viewName":"Get Categories",
+            "params":[
+                {
+                    "name":"token",
+                    "viewName":"API Token",
+                    "type":"vault"
+                },
+                {
+                    "name":"limit",
+                    "viewName": "Limit",
+                    "type":"string"
+                },
+                {
+                    "name":"offset",
+                    "viewName": "Offset",
+                    "type":"string"
+                }
+            ]
+        },
+        {
+            "name":"getCategoriesStats",
+            "viewName":"Get Categories Stats",
+            "params":[
+                {
+                    "name":"token",
+                    "viewName":"API Token",
+                    "type":"vault"
+                },
+                {
+                    "name":"categories",
+                    "viewName": "Categories",
+                    "type": "autocomplete",
+                    "autocompleteType":"function",
+                    "functionName":"listCategories"
+                },
+                {
+                    "name":"startDate",
+                    "viewName": "Start Date",
+                    "type": "autocomplete",
+                    "autocompleteType":"function",
+                    "functionName":"getStartDate"
+                },
+                {
+                    "name":"endDate",
+                    "viewName": "End Date",
+                    "type": "autocomplete",
+                    "autocompleteType":"function",
+                    "functionName":"getEndDate"
+                },
+                {
+                    "name":"limit",
+                    "viewName": "Limit",
+                    "type":"string"
+                },
+                {
+                    "name":"offset",
+                    "viewName": "Offset",
+                    "type":"string"
+                }
+            ]
+        }
+    ]
+}
