@@ -14,7 +14,21 @@ function getSGClient(settings, params){
     return client;
 }
 
+function addFilter(filters, key, vals){
+    return filters.map(filter => vals.map(val => {
+        const newFilter = { ...filter };
+        newFilter[key] = val;
+        return newFilter;
+    })).flat();
+}
+
+async function sleep(ms){
+    return new Promise(r => setTimeout(r, ms));
+}
+
 module.exports = {
     getSGMail,
-    getSGClient
+    getSGClient,
+    addFilter,
+    sleep
 }

@@ -108,37 +108,6 @@
             ]
         },
         {
-            "name":"getEmailMessages",
-            "viewName":"Get Email Messages",
-            "params":[
-                {
-                    "name":"token",
-                    "viewName":"API Token",
-                    "type":"vault"
-                },
-                {
-                    "name":"to",
-                    "viewName": "To Emails",
-                    "type":"text"
-                },
-                {
-                    "name":"from",
-                    "viewName": "From Emails",
-                    "type":"text"
-                },
-                {
-                    "name":"subjects",
-                    "viewName": "Subjects",
-                    "type":"text"
-                },
-                {
-                    "name":"limit",
-                    "viewName": "Limit",
-                    "type":"string"
-                }
-            ]
-        },
-        {
             "name":"getEmailStats",
             "viewName":"Get Email Stats",
             "params":[
@@ -192,48 +161,6 @@
                     "name":"token",
                     "viewName":"API Token",
                     "type":"vault"
-                },
-                {
-                    "name":"limit",
-                    "viewName": "Limit",
-                    "type":"string"
-                },
-                {
-                    "name":"offset",
-                    "viewName": "Offset",
-                    "type":"string"
-                }
-            ]
-        },
-        {
-            "name":"getCategoriesStats",
-            "viewName":"Get Categories Stats",
-            "params":[
-                {
-                    "name":"token",
-                    "viewName":"API Token",
-                    "type":"vault"
-                },
-                {
-                    "name":"categories",
-                    "viewName": "Categories",
-                    "type": "autocomplete",
-                    "autocompleteType":"function",
-                    "functionName":"listCategories"
-                },
-                {
-                    "name":"startDate",
-                    "viewName": "Start Date",
-                    "type": "autocomplete",
-                    "autocompleteType":"function",
-                    "functionName":"getStartDate"
-                },
-                {
-                    "name":"endDate",
-                    "viewName": "End Date",
-                    "type": "autocomplete",
-                    "autocompleteType":"function",
-                    "functionName":"getEndDate"
                 },
                 {
                     "name":"limit",

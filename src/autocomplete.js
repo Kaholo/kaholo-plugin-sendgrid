@@ -56,7 +56,7 @@ async function listCategories(query, pluginSettings, pluginActionParams){
     method: "GET",
     url: "/v3/categories"
   });
-  return handleResult(body, query);
+  return handleResult(body, query, "category");
 }
 
 async function getSendAt(query, pluginSettings, pluginActionParams){
@@ -79,11 +79,11 @@ function getDate(paramName){
     let curDate;
     if (query){
       try {
-        curTime = new Date(query).toISOString().split('T')[0];
+        curDate = new Date(query).toISOString().split('T')[0];
       } catch (err) {}
     }
     if (!curDate) curDate = new Date().toISOString().split('T')[0];
-    return [{id: curTime, value: curTime}];
+    return [{id: curDate, value: curDate}];
   }
 }
 

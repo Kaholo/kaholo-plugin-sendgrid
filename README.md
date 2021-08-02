@@ -25,16 +25,6 @@ Send a new email.
 15. Headers (Text) **Optional** - Any custom headers to attach to the email. Can be passed as key=value pairs seperated each with a new line. Can also be passed from code as an object.
 16. Custom Args (Text) **Optional** - Any custom arguments to attach to email events. Can be passed as key=value pairs seperated each with a new line. Can also be passed from code as an object.
 
-## Method: Get Email Messages
-Get Email Messages
-
-## Parameters
-1. API Token (Vault) **Optional** - SendGrid API Token to authenticate with.
-2. To Emails (Text) **Optional** - 
-3. From Emails (Text) **Optional** - 
-4. Subjects (Text) **Optional** - 
-5. Limit (Limit) **Optional** - 
-
 ## Method: Get Email Stats
 Get email stats in the range of dates specified.
 
@@ -54,12 +44,3 @@ List all catrgories in the connected account
 
 ## Parameters
 1. API Token (Vault) **Optional** - SendGrid API Token to authenticate with.
-
-## Method: Get Category Stats
-Retrieve all of your email statistics for the specified category.
-
-## Parameters
-1. API Token (Vault) **Optional** - SendGrid API Token to authenticate with.
-2. Category (Autocomplete) **Required** - The category to return the stats about.
-2. Start Date (Autocomplete) **Optional** - The date to return data since.
-3. End Date (Autocomplete) **Optional** - The date to return data until

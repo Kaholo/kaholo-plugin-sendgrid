@@ -52,7 +52,8 @@ module.exports = {
         if (!value) return undefined;
         if (Array.isArray(value)) return value.map(parseSgEmailAddr);
         if (typeof(value) === "string"){
-            return value.split("\n").map(line => line.trim());
+            const arr = value.split("\n").map(line => line.trim());
+            return arr.length == 1 ? arr[0] : arr;
         }
         if (typeof(value) === "object"){
             if (!value.email) throw "Bad SendGrid Email Address Format";
@@ -72,11 +73,11 @@ module.exports = {
         if (ext.length > 0) ext = ext[0];
         let fileName = filePath.match(/[^\\^/]+\.[a-zA-Z]+$/);
         if (fileName.length == 0) throw "Can't provide a file with no name as an attachment";
-        filename = filename[0];
+        fileName = fileName[0];
         if (fs.lstatSync(filePath).isDirectory()) throw "Can't upload a directory as an attachment";
         return {
             content: fs.readFileSync(filePath).toString("base64"), 
-            filename,
+            filename: fileName,
             type: ext ? mime.lookup(ext) || "application/octet-stream" : "application/octet-stream"
         };
     }
