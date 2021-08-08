@@ -1,5 +1,5 @@
 const parsers = require("./parsers");
-const { getSGMail, getSGClient } = require("./helpers");
+const { getSGClient } = require("./helpers");
 
 const MAX_RESULTS = 10;
 // auto complete helper methods

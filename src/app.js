@@ -1,10 +1,10 @@
 const parsers = require("./parsers");
-const { getSGMail, getSGClient, addFilter, sleep } = require("./helpers");
+const { getSGMail, getSGClient } = require("./helpers");
 
 async function sendEmail(action, settings){
     const mail = getSGMail(settings, action.params);
     const { to, cc, bcc, from, replyTo, subject, text, html, template, dynamicTemplateData, 
-            attachmentPaths, categories, headers, customArgs, sendAt, waitUntilSent} = action.params;
+            attachmentPaths, categories, headers, customArgs, sendAt} = action.params;
 
     if (!to || !(from || template)) {
         throw "One of the required parameters was not provided";
@@ -30,7 +30,7 @@ async function sendEmail(action, settings){
     };
     // send mail
     const [response, {}] = await mail.send(request);
-    return {msg_id: msgId, status: response.statusCode === 202 ? "processing" : "delivered"};
+    return {headers: response.headers, status: response.statusCode === 202 ? "processing" : "delivered"};
 }
 
 async function getEmailStats(action, settings){
