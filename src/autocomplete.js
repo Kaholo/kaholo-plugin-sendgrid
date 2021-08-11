@@ -26,7 +26,7 @@ function handleResult(result, query, key){
   return filterItems(items, query);
 }
 
-async function filterItems(items, query){
+function filterItems(items, query){
   if (query){
     const qWords = query.split(/[. ]/g).map(word => word.toLowerCase()); // split by '.' or ' ' and make lower case
     items = items.filter(item => qWords.every(word => item.value.toLowerCase().includes(word)));
@@ -57,6 +57,13 @@ async function listCategories(query, pluginSettings, pluginActionParams){
     url: "/v3/categories"
   });
   return handleResult(body, query, "category");
+}
+
+async function listCategoriesWithNew(query, pluginSettings, pluginActionParams){
+  const result = await listCategories(query, pluginSettings, pluginActionParams);
+  const categoryName = query.trim();
+  if (!categoryName || result.some(category => category.value == categoryName)) return result;
+  return [{id: categoryName, value: categoryName}, ...result];
 }
 
 async function getSendAt(query, pluginSettings, pluginActionParams){
@@ -90,6 +97,7 @@ function getDate(paramName){
 module.exports = {
   listTemplates,
 	listCategories,
+	listCategoriesWithNew,
 	getSendAt,
 	getStartDate: getDate("startDate"),
 	getEndDate: getDate("endDate") 
