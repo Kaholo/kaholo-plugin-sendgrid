@@ -20,7 +20,7 @@ Send a new email.
 10. Template (Autocomplete) **Optional** - If specified, create the new email using the specified template.
 11. Dynamic Template Data (Text) **Optional** - Variables to pass to the template. Can be passed either as key=value pairs seperated each with a new line, or passed as an object from code.
 12. Attachment Paths (Text) **Optional** - If specified, attach all files from the Paths specified to the email.
-13. Categories (Autocomplete) **Optional** - categories to assign this message to. Can be passed either from autocomplete to use as single exisiting Category or as an array of strings from code. If the category you want to use wasn't used before, you have to provide it from code, since autocomplete only lists existing categories.
+13. Categories (Autocomplete) **Optional** - categories to assign this message to. Can pass one category from autocomplete, or multiple categories as an array from code.
 14. Send At (Autocomplete) **Optional** - The time and date to send the message. If passed from code, make sure to pass it as a unix timestamp.
 15. Headers (Text) **Optional** - Any custom headers to attach to the email. Can be passed as key=value pairs seperated each with a new line. Can also be passed from code as an object.
 16. Custom Args (Text) **Optional** - Any custom arguments to attach to email events. Can be passed as key=value pairs seperated each with a new line. Can also be passed from code as an object.
