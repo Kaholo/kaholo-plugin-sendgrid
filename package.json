@@ -1,14 +1,21 @@
-{"name":"kaholo-plugin-sendgrid",
-    "version":"1.0.0",
-    "description":"Kaholo plugin for integration with SendGrid API.",
-    "main":"app.js",
-    "scripts":{
-        "test":"echo \"Error: no test specified\" && exit 1"
-    },
-    "author":"Kaholo Group(Amit Alon)",
-    "license":"ISC",
-    "dependencies":{
-        "@sendgrid/mail": "^7.4.5",
-        "mime-types": "^2.1.32"
-    }
+{
+  "name": "kaholo-plugin-sendgrid",
+  "description": "Kaholo plugin for integration with SendGrid API.",
+  "main": "app.js",
+  "scripts": {
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint . --fix"
+  },
+  "author": "Kaholo Group(Amit Alon)",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/client": "^7.7.0",
+    "@sendgrid/mail": "^7.4.5",
+    "mime-types": "^2.1.32"
+  },
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
 }
