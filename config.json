@@ -1,20 +1,24 @@
 {
   "name": "SendGrid",
-  "viewName": "SendGrid",
+  "viewName": "Twilio SendGrid",
   "type": "executer",
   "execProgram": "node",
   "main": "app.js",
   "exposeRoute": true,
   "imgUrl": "logo.png",
   "version": "1.0.4",
-  "description": "Integration with SendGrid API",
+  "description": "Cloud-based email delivery platform",
+  "category": "Notifications",
   "keywords": [
     "mail",
     "email",
     "sendgrid",
-    "send",
     "grid",
-    "notification"
+    "notification",
+    "api",
+    "marketing",
+    "cloud",
+    "twilio"
   ],
   "settings": [
     {
@@ -183,6 +187,5 @@
         }
       ]
     }
-  ],
-  "category": "NOTIFICATIONS"
+  ]
 }
