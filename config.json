@@ -20,23 +20,21 @@
     "cloud",
     "twilio"
   ],
-  "settings": [
-    {
-      "name": "token",
-      "viewName": "API Token",
-      "type": "vault"
-    }
-  ],
+  "auth": {
+    "authId": "sendgridAccount",
+    "params": [
+      {
+        "name": "token",
+        "viewName": "API Token",
+        "type": "vault"
+      }
+    ]
+  },
   "methods": [
     {
       "name": "sendEmail",
       "viewName": "Send Email",
       "params": [
-        {
-          "name": "token",
-          "viewName": "API Token",
-          "type": "vault"
-        },
         {
           "name": "to",
           "viewName": "To",
@@ -125,11 +123,6 @@
       "viewName": "Get Email Stats",
       "params": [
         {
-          "name": "token",
-          "viewName": "API Token",
-          "type": "vault"
-        },
-        {
           "name": "startDate",
           "viewName": "Start Date",
           "type": "autocomplete",
@@ -158,23 +151,12 @@
     {
       "name": "getEventWebhooks",
       "viewName": "Get Event Webhook Settings",
-      "params": [
-        {
-          "name": "token",
-          "viewName": "API Token",
-          "type": "vault"
-        }
-      ]
+      "params": []
     },
     {
       "name": "getCategories",
       "viewName": "Get Categories",
       "params": [
-        {
-          "name": "token",
-          "viewName": "API Token",
-          "type": "vault"
-        },
         {
           "name": "limit",
           "viewName": "Limit",
